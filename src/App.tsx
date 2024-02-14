@@ -1,21 +1,22 @@
-import { Button, Grid, GridItem, Show } from "@chakra-ui/react";
+import { Grid, GridItem, Show } from "@chakra-ui/react";
+import Navbar from "./components/Navbar";
 
 function App() {
   return (
     <Grid
       gridTemplateAreas={{
         base: `"nav" "main"`,
-        md: `"nav nav" "aside main"`,
+        lg: `"nav nav" "aside main"`,
       }}
-      gridTemplateColumns={{
-        base: "1fr",
-        md: "300px 1fr",
-      }}
+      // gridTemplateColumns={{
+      //   base: "1fr",
+      //   lg: "300px 1fr",
+      // }}
     >
-      <GridItem area={"nav"} bgColor={"cadetblue"}>
-        Navbar
+      <GridItem area={"nav"}>
+        <Navbar />
       </GridItem>
-      <Show above="md">
+      <Show above="lg">
         <GridItem bgColor={"yellowgreen"} area={"aside"}>
           Aside
         </GridItem>
