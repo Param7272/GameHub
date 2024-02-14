@@ -1,10 +1,4 @@
-import {
-  FormLabel,
-  HStack,
-  Switch,
-  Text,
-  useColorMode,
-} from "@chakra-ui/react";
+import { FormLabel, HStack, Switch, useColorMode } from "@chakra-ui/react";
 
 const ColorModeSwitch = () => {
   const { colorMode, toggleColorMode } = useColorMode();

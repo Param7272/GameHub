@@ -1,23 +1,17 @@
-import {
-  Card,
-  CardBody,
-  CardHeader,
-  HStack,
-  Heading,
-  Image,
-  Text,
-} from "@chakra-ui/react";
+import { Card, CardBody, HStack, Heading, Image } from "@chakra-ui/react";
 import { Game } from "../hooks/useGames";
-import PlatformIconList from "./PlatformIconList";
 import GameScore from "./GameScore";
+import PlatformIconList from "./PlatformIconList";
 
 const GameCard = ({ game }: { game: Game }) => {
   return (
     <Card borderRadius={"10px"} overflow={"hidden"}>
       <Image
         src={game.background_image}
+        fallbackSrc="fallbackSrc='https://via.placeholder.com/150'"
         alt="game-logo"
-        backgroundSize={"cover"}
+        height={"200px"}
+        objectFit={"cover"}
       />
 
       <CardBody>

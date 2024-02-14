@@ -13,6 +13,8 @@ function App() {
     null
   );
 
+  const [search, setSearch] = useState("");
+
   return (
     <Grid
       gridTemplateAreas={{
@@ -25,7 +27,11 @@ function App() {
       }}
     >
       <GridItem area={"nav"}>
-        <Navbar />
+        <Navbar
+          onSearch={(search) => {
+            setSearch(search);
+          }}
+        />
       </GridItem>
       <Show above="lg">
         <GridItem
@@ -51,6 +57,7 @@ function App() {
         <GameGrid
           selectedGenre={selectedGenre}
           selectedPlatform={selectedPlatform}
+          search={search}
         />
       </GridItem>
     </Grid>

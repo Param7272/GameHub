@@ -1,9 +1,9 @@
 import {
+  Button,
   Menu,
   MenuButton,
-  Button,
-  MenuList,
   MenuItem,
+  MenuList,
   Skeleton,
 } from "@chakra-ui/react";
 import { FaChevronDown } from "react-icons/fa";
@@ -16,6 +16,10 @@ interface Props {
 
 const Platforms = ({ setSelectedPlatform, selectedPlatform }: Props) => {
   const { data: platforms, error, isLoading } = usePlatform();
+
+  if (error) {
+    return null;
+  }
   return (
     <>
       {isLoading ? (
